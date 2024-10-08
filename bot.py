@@ -19,8 +19,8 @@ load_dotenv()
 
 # -- CONSTANTS -- #
 TOKEN = os.getenv("DISCORD_CLIENT_TOKEN")
-STAFF = 1146564800797749350 # temporary, Apollo Staff role
-LOG_CHANNEL = 1291478810293698615 # temporary, Apollo development channel
+STAFF = 1290697193652490241
+LOG_CHANNEL = 1290697193652490241
 INTELLIGENCE_GROUP_CRITERIA =  ["intelligence","intel","investigation","agency"]
 
 # -- Initialisation -- #
