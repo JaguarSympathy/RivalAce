@@ -105,13 +105,13 @@ async def backgroundCheck(interaction: discord.Interaction, member: discord.Memb
     await interaction.response.defer()
     if isinstance(member,discord.Member): # non-self submitted
         staff_role = interaction.guild.get_role(STAFF)
-        if staff_role in interaction.user.roles: # Staff only
-            rblxId = await fetch_user_id(member.display_name)
-        else:
+        if staff_role not in interaction.user.roles: # Staff only
             await interaction.followup.send("Access denied! Only Staff can select specific members to background check.")
+            return
     else: # default case; username left blank - use display name
         member = interaction.user
-        rblxId = await fetch_user_id(member.display_name)
+
+    rblxId = await fetch_user_id(member.display_name)
     
     await background_check(rblxId,interaction,member)
 
